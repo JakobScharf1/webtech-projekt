@@ -4,4 +4,4 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface InventoryObjectRepository extends CrudRepository<InventoryObject, Long> {}
+public interface InventoryObjectRepository extends CrudRepository<InventoryObject, Long> { }

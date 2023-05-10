@@ -19,8 +19,8 @@ public class InventoryObject {
     private String location;
 
     public InventoryObject(String name, int amount, String location) {
-        this.amount = amount;
         this.name = name;
+        this.amount = amount;
         this.location = location;
     }
 
@@ -41,4 +41,8 @@ public class InventoryObject {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    public String getLocation(String location) {return location;}
+
+    public void setLocation(String location) {this.location = location;}
 }

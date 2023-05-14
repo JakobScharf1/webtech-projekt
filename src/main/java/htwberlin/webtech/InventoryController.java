@@ -12,6 +12,11 @@ public class InventoryController {
     @Autowired
     InventoryObjectService service;
 
+    @GetMapping("/")
+    public String index(){
+        return "Hello World!";
+    }
+
     @PostMapping("/inventoryObject")
     public InventoryObject createInventoryObject(@RequestBody InventoryObject inventoryObject){
         return service.save(inventoryObject);

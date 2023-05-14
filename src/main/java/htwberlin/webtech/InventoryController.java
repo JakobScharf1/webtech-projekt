@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class HelloController {
+public class InventoryController {
 
     @Autowired
     InventoryObjectService service;

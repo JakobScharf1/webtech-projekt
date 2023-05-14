@@ -42,7 +42,11 @@ public class InventoryObject {
         this.amount = amount;
     }
 
-    public String getLocation(String location) {return location;}
+    public String getLocation() {
+        return location;
+    }
 
-    public void setLocation(String location) {this.location = location;}
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

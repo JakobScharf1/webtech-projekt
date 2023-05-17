@@ -16,7 +16,6 @@ h1 {
 }
 
 header {
-    width: auto;
     height: 80px;
     padding: 0.5rem 0.5rem 0.5rem 3rem;
     background-color: lightgray;
@@ -28,10 +27,21 @@ header {
 
 header * {
     display: inline;
+    vertical-align: middle;
 }
 
 header li {
-    margin: 20px;
+    padding: 10px 15px 10px 15px;
+    border: 2px white solid;
+}
+
+header li:hover{
+    background-color: darkgray;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
 }
 
 .content {
@@ -41,13 +51,14 @@ header li {
 .button_blue {
     background-color: dodgerblue;
     width: fit-content;
-    margin: 1rem 0.5rem 1rem 0.5rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     border-radius: 10px;
     color: white;
     float: left;
+    text-decoration: none;
 }
 
 .button_blue:hover {
     cursor: pointer;
+    background-color: #0074e4;
 }

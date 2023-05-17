@@ -1,0 +1,53 @@
+* {
+    font-family: 'Nunito', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+header {
+    width: auto;
+    height: 80px;
+    padding: 0.5rem 0.5rem 0.5rem 3rem;
+    background-color: lightgray;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+.content {
+    margin: 7rem 3rem 0.5rem 3rem;
+}
+
+.button_blue {
+    background-color: dodgerblue;
+    width: fit-content;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 10px;
+    color: white;
+    float: left;
+}
+
+.button_blue:hover {
+    cursor: pointer;
+}

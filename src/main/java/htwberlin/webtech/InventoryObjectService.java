@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class InventoryObjectService {
@@ -28,7 +29,7 @@ public class InventoryObjectService {
     }
 
     public void update(Long id, int amount) {
-        repo.findById(id).setAmount(amount);
+        //repo.findById(id).setAmount(amount);
     }
 
     public void delete(Long id){

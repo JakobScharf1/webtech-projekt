@@ -12,18 +12,6 @@ public class InventoryObjectService {
     @Autowired
     InventoryObjectRepository repo;
 
-    public InventoryObject save(InventoryObject inventoryObject) {
-        return repo.save(inventoryObject);
-    }
-
-    public InventoryObject get(Long id) {
-        return repo.findById(id).orElseThrow(() -> new RuntimeException());
-    }
-
-    public void delete(Long id){
-        repo.deleteById(id);
-    }
-
     public List<InventoryObject> getAll() {
         Iterable<InventoryObject> iterator = repo.findAll();
         List<InventoryObject> inventoryObjects = new ArrayList<>();
@@ -31,4 +19,19 @@ public class InventoryObjectService {
         return inventoryObjects;
     }
 
+    public InventoryObject get(Long id) {
+        return repo.findById(id).orElseThrow(() -> new RuntimeException());
+    }
+
+    public InventoryObject save(InventoryObject inventoryObject) {
+        return repo.save(inventoryObject);
+    }
+
+    public void update(Long id, int amount) {
+        repo.findById(id).setAmount(amount);
+    }
+
+    public void delete(Long id){
+        repo.deleteById(id);
+    }
 }

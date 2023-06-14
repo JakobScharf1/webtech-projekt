@@ -12,14 +12,9 @@ public class InventoryController {
     @Autowired
     InventoryObjectService service;
 
-    @GetMapping("/")
-    public String index(){
-        return "Hello World!";
-    }
-
-    @PostMapping("/inventoryObject")
-    public InventoryObject createInventoryObject(@RequestBody InventoryObject inventoryObject){
-        return service.save(inventoryObject);
+    @GetMapping("/inventoryObject")
+    public List<InventoryObject> getAllInventoryObjects(){
+        return service.getAll();
     }
 
     @GetMapping("/inventoryObject/{id}")
@@ -28,9 +23,15 @@ public class InventoryController {
         return service.get(inventoryObjectId);
     }
 
-    @GetMapping("/inventoryObject")
-    public List<InventoryObject> getAllInventoryObjects(){
-        return service.getAll();
+    @PostMapping("/inventoryObject")
+    public InventoryObject createInventoryObject(@RequestBody InventoryObject inventoryObject){
+        return service.save(inventoryObject);
+    }
+
+    @PutMapping("/inventoryObject/{id}")
+    public void updateInventoryObject(@PathVariable String id, @PathVariable int amount) {
+        Long inventoryObjectId = Long.parseLong(id);
+        service.update(inventoryObjectId, amount);
     }
 
     @DeleteMapping("/inventoryObject/{id}")

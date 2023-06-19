@@ -15,13 +15,9 @@ public class InventoryObject {
     @Column(name = "AMOUNT")
     private int amount;
 
-    @Column(name = "LOCATION")
-    private String location;
-
-    public InventoryObject(String name, int amount, String location) {
+    public InventoryObject(String name, int amount) {
         this.name = name;
         this.amount = amount;
-        this.location = location;
     }
 
     public InventoryObject() {}
@@ -40,13 +36,5 @@ public class InventoryObject {
 
     public void setAmount(int amount) {
         this.amount = amount;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 }

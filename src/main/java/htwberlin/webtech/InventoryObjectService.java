@@ -29,10 +29,14 @@ public class InventoryObjectService {
     }
 
     public void update(Long id, int amount) {
-        //repo.findById(id).setAmount(amount);
+        // Muss noch implementiert werden;
     }
 
-    public void delete(Long id){
-        repo.deleteById(id);
+    public boolean delete(Long id) {
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }

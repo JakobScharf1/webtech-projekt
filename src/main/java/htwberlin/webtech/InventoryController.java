@@ -29,9 +29,9 @@ public class InventoryController {
     }
 
     @PutMapping("/inventoryObject/{id}")
-    public void updateInventoryObject(@PathVariable String id, @PathVariable int amount) {
+    public void updateInventoryObject(@PathVariable String id, @PathVariable String name, @PathVariable int amount) {
         Long inventoryObjectId = Long.parseLong(id);
-        service.update(inventoryObjectId, amount);
+        service.update(inventoryObjectId, name, amount);
     }
 
     @DeleteMapping("/inventoryObject/{id}")

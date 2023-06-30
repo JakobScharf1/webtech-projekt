@@ -28,8 +28,19 @@ public class InventoryObjectService {
         return repo.save(inventoryObject);
     }
 
-    public void update(Long id, int amount) {
-        // Muss noch implementiert werden;
+    public boolean update(Long id, String name, int amount) {
+        var inventoryObjectUpdateRequest = repo.findById(id);
+
+        if (inventoryObjectUpdateRequest.isEmpty()) {
+            return false;
+        }
+
+        var inventoryObject = inventoryObjectUpdateRequest.get();
+
+        inventoryObject.setName(name);
+        inventoryObject.setAmount(amount);
+
+        return true;
     }
 
     public boolean delete(Long id) {

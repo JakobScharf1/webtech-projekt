@@ -28,11 +28,11 @@ public class InventoryObjectService {
         return repo.save(inventoryObject);
     }
 
-    public boolean update(Long id, String name, int amount) {
+    public InventoryObject update(Long id, String name, int amount) {
         var inventoryObjectUpdateRequest = repo.findById(id);
 
         if (inventoryObjectUpdateRequest.isEmpty()) {
-            return false;
+            return null;
         }
 
         var inventoryObject = inventoryObjectUpdateRequest.get();
@@ -40,12 +40,15 @@ public class InventoryObjectService {
         inventoryObject.setName(name);
         inventoryObject.setAmount(amount);
 
-        return true;
+        inventoryObject = repo.save(inventoryObject);
+
+        return inventoryObject;
     }
 
     public boolean delete(Long id) {
         if (repo.existsById(id)) {
             repo.deleteById(id);
+
             return true;
         }
         return false;

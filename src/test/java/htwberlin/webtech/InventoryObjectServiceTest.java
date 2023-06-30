@@ -68,13 +68,31 @@ public class InventoryObjectServiceTest {
     @Test
     @DisplayName("Test the HTTP-Put method for an inventory object")
     public void testPutInventoryObject() throws Exception {
-        //create methode in der Klasse "InventoryObjectService" muss noch implementiert werden
+        // Test wirft derzeit noch NullPointerException
+        InventoryObject inventoryObject = new InventoryObject("Bier", 2);
+
+        repository.save(inventoryObject);
+
+        Long inventoryObjectId = inventoryObject.getId();
+
+        doReturn(true).when(repository).existsById(inventoryObjectId);
+
+        System.out.println(inventoryObject);
+
+        var actual = serviceInject.update(inventoryObjectId, "Pils", 5);
+
+        assertEquals("Pils", actual.getName());
+        assertEquals(5, actual.getAmount());
     }
 
     @Test
     @DisplayName("Test the HTTP-Delete method for an inventory object")
     public void testDeleteInventoryObject() throws Exception {
-        Long inventoryObjectId =42L;
+        InventoryObject inventoryObject = new InventoryObject("Bier", 2);
+
+        repository.save(inventoryObject);
+
+        Long inventoryObjectId = inventoryObject.getId();
 
         doReturn(true).when(repository).existsById(inventoryObjectId);
 

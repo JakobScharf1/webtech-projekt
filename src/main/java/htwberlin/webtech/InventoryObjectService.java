@@ -40,7 +40,7 @@ public class InventoryObjectService {
         inventoryObject.setName(name);
         inventoryObject.setAmount(amount);
 
-        inventoryObject = repo.save(inventoryObject);
+        repo.save(inventoryObject);
 
         return inventoryObject;
     }
